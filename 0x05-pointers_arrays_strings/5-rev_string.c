@@ -3,25 +3,24 @@
 /**
  * rev_string - function that reverses a string
  * @s: string of pointer
- * Return: Always 0
+ * Return: string in reverse
  */
 
 void rev_string(char *s)
 {
-	int len, u, start;
+	char rev = s[0];
+	int counter = 0;
+	int u;
 
-	char temp;
-
-	for (len = 0; s[len] != '\0'; len++)
+	while (s[counter] != '\0')
 	{
-		u = 0;
-		start = len / 2;
+		counter++;
 	}
-	while (start--)
+	for (u = 0; u < counter; u++)
 	{
-		temp = s[len - u - 1];
-		s[len - u - 1] = s[u];
-		s[u] = temp;
-		u++;
+		counter--;
+		rev = s[u];
+		s[u] = s[counter];
+		s[counter] = rev;
 	}
 }
