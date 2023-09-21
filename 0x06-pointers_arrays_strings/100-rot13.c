@@ -9,21 +9,22 @@
 
 char *rot13(char *s)
 {
-	int h, i;
-	char num1[] = "ABCDEFGHIJKLMNOPQRSTUVWYZabcdefghijklmnopqrstuvwxyz";
-	char num2[] = "NOPQRSTUVWXYZABCDEFGHIJKLMnopqrstuvwxyzabcdefghijklm";
+	int h;
+	char num1[] = "abcdefghijklmnopqrstuvwxyzABCDEFGHIJKLMNOPQRSTUVWXYZ";
+	char num2[] = "nopqrstuvwxyzabcdefghijklmNOPQRSTUVWXYZABCDEFGHIJKLM";
+	char *ptr = s;
 
-	for (h = 0; s[h] != '\0'; h++)
+	while (*s)
 	{
-		for (i = 0; i < 52; i++)
+		for (h = 0; h <= 52; h++)
 		{
-			if (s[h] == num1[i])
+			if (*s == num1[h])
 			{
-				s[h] = num2[i];
+				*s = num2[h];
 				break;
 			}
 		}
+		s++;
 	}
-	return (s);
+	return (ptr);
 }
-
