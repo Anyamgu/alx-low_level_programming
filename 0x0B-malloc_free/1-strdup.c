@@ -21,10 +21,14 @@ char *_strdup(char *str)
 		return (NULL);
 	}
 
-	for (g = 0; str[g] != '\0'; g++)
+	g = 0;
+	while (str[g] != '\0')
 	{
-		ptr = (char *)malloc(sizeof(char) * (g + 1));
+		g++;
 	}
+
+	ptr = (char *)malloc(sizeof(char) * (g + 1));
+
 	if (ptr == NULL)
 	{
 		return (NULL);
