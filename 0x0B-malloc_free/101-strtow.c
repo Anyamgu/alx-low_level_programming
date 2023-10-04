@@ -2,6 +2,10 @@
 #include <stdio.h>
 #include <stdlib.h>
 
+int count_words(char *str);
+int split_string(char *str, char **words);
+char **strtow(char *str);
+
 /**
  * count_words - Count the number of words in a string
  * @str: The input string
